@@ -1,0 +1,1607 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/airbnb/prop-types#readme"
+
+    >airbnb-prop-types (v2.5.3)</a>
+</h1>
+<h4>Custom React PropType validators that we use at Airbnb.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.airbnb-prop-types">module airbnb-prop-types</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.and">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>and
+            <span class="apidocSignatureSpan">(validators)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.between">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>between
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.childrenHavePropXorChildren">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>childrenHavePropXorChildren
+            <span class="apidocSignatureSpan">(prop)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.childrenOf">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>childrenOf
+            <span class="apidocSignatureSpan">(propType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.childrenOfType">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>childrenOfType
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.childrenSequenceOf">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>childrenSequenceOf
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.componentWithName">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>componentWithName
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.elementType">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>elementType
+            <span class="apidocSignatureSpan">(Type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.explicitNull">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>explicitNull
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.forbidExtraProps">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>forbidExtraProps
+            <span class="apidocSignatureSpan">(propTypes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.integer">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>integer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.keysOf">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>keysOf
+            <span class="apidocSignatureSpan">(propType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.mutuallyExclusiveProps">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>mutuallyExclusiveProps
+            <span class="apidocSignatureSpan">(propType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.mutuallyExclusiveTrueProps">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>mutuallyExclusiveTrueProps
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.nChildren">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>nChildren
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.nonNegativeInteger">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>nonNegativeInteger
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.nonNegativeNumber">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>nonNegativeNumber
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.numericString">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>numericString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.object">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>object
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.or">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>or
+            <span class="apidocSignatureSpan">(validators)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.range">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>range
+            <span class="apidocSignatureSpan">(min, max)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.restrictedProp">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>restrictedProp
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.sequenceOf">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>sequenceOf
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.shape">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>shape
+            <span class="apidocSignatureSpan">(shapeTypes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.uniqueArray">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>uniqueArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.uniqueArrayOf">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>uniqueArrayOf
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.valuesOf">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>valuesOf
+            <span class="apidocSignatureSpan">(propType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.withShape">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>withShape
+            <span class="apidocSignatureSpan">(type, shapeTypes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">airbnb-prop-types.</span>nonNegativeInteger.typeChecker</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.airbnb-prop-types.nonNegativeInteger">module airbnb-prop-types.nonNegativeInteger</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.nonNegativeInteger.nonNegativeInteger">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.</span>nonNegativeInteger
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.nonNegativeInteger.isRequired">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.nonNegativeInteger.</span>isRequired
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">airbnb-prop-types.nonNegativeInteger.</span>typeChecker</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">airbnb-prop-types.nonNegativeInteger.</span>typeName</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.airbnb-prop-types.nonNegativeInteger.typeChecker">module airbnb-prop-types.nonNegativeInteger.typeChecker</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.nonNegativeInteger.typeChecker.0">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.nonNegativeInteger.typeChecker.</span>0
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.airbnb-prop-types.nonNegativeInteger.typeChecker.1">
+            function <span class="apidocSignatureSpan">airbnb-prop-types.nonNegativeInteger.typeChecker.</span>1
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.airbnb-prop-types" id="apidoc.module.airbnb-prop-types">module airbnb-prop-types</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.and" id="apidoc.element.airbnb-prop-types.and">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>and
+        <span class="apidocSignatureSpan">(validators)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function andValidator(validators) {
+  var name = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : &#x27;and&#x27;;
+
+  if (!Array.isArray(validators)) {
+    throw new TypeError(&#x27;and: 2 or more validators are required&#x27;);
+  }
+  if (validators.length &#x3c;= 1) {
+    throw new RangeError(&#x27;and: 2 or more validators are required&#x27;);
+  }
+
+  var validator = function () {
+    function and() {
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key &#x3c; _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      var firstError = null;
+      validators.some(function (validatorFn) {
+        firstError = validatorFn.apply(undefined, args);
+        return firstError != null;
+      });
+      return firstError == null ? null : firstError;
+    }
+
+    return and;
+  }();
+
+  validator.isRequired = function () {
+    function andIsRequired() {
+      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 &#x3c; _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      var firstError = null;
+      validators.some(function (validatorFn) {
+        firstError = validatorFn.isRequired.apply(validatorFn, args);
+        return firstError != null;
+      });
+      return firstError == null ? null : firstError;
+    }
+
+    return andIsRequired;
+  }();
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, name, validators);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.between" id="apidoc.element.airbnb-prop-types.between">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>between
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function betweenValidator(options) {
+  var argError = argValidator({ options: options }, &#x27;options&#x27;);
+  if (argError) {
+    throw new TypeError(&#x27;between: only one of the pairs of `lt`/`lte`, and `gt`/`gte`, may be supplied, and at least one pair must
+ be provided.&#x27;);
+  }
+
+  var optsThunks = propsThunkify(options);
+
+  var validator = function () {
+    function between(props, propName, componentName) {
+      var propValue = props[propName];
+      if (propValue == null) {
+        return null;
+      }
+
+      if (typeof propValue !== &#x27;number&#x27;) {
+        return new RangeError(String(componentName) + &#x27;: &#x27; + String(propName) + &#x27; must be a number, got &#x22;&#x27; + (typeof propValue === &#x27;
+undefined&#x27; ? &#x27;undefined&#x27; : _typeof(propValue)) + &#x27;&#x22;&#x27;);
+      }
+
+      var opts = invokeWithProps(optsThunks, props);
+
+      for (var _len = arguments.length, rest = Array(_len &#x3e; 3 ? _len - 3 : 0), _key = 3; _key &#x3c; _len; _key++) {
+        rest[_key - 3] = arguments[_key];
+      }
+
+      var thunkValuesError = thunkValueValidator.apply(undefined, [_defineProperty({}, propName, opts), propName, componentName].
+concat(rest));
+      if (thunkValuesError) {
+        return thunkValuesError;
+      }
+
+      if (!lowerCompare(propValue, opts) || !upperCompare(propValue, opts)) {
+        return new RangeError(errorMessage(componentName, propName, opts));
+      }
+
+      return null;
+    }
+
+    return between;
+  }();
+  validator.isRequired = function () {
+    function betweenRequired(props, propName, componentName) {
+      var propValue = props[propName];
+      if (typeof propValue !== &#x27;number&#x27;) {
+        return new RangeError(String(componentName) + &#x27;: &#x27; + String(propName) + &#x27; must be a number, got &#x22;&#x27; + (typeof propValue === &#x27;
+undefined&#x27; ? &#x27;undefined&#x27; : _typeof(propValue)) + &#x27;&#x22;&#x27;);
+      }
+
+      var opts = invokeWithProps(optsThunks, props);
+
+      for (var _len2 = arguments.length, rest = Array(_len2 &#x3e; 3 ? _len2 - 3 : 0), _key2 = 3; _key2 &#x3c; _len2; _key2++) {
+        rest[_key2 - 3] = arguments[_key2];
+      }
+
+      var thunkValuesError = thunkValueValidator.apply(undefined, [_defineProperty({}, propName, opts), propName, componentName].
+concat(rest));
+      if (thunkValuesError) {
+        return thunkValuesError;
+      }
+
+      if (!lowerCompare(propValue, opts) || !upperCompare(propValue, opts)) {
+        return new RangeError(errorMessage(componentName, propName, opts));
+      }
+
+      return null;
+    }
+
+    return betweenRequired;
+  }();
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, &#x27;between&#x27;, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.childrenHavePropXorChildren" id="apidoc.element.airbnb-prop-types.childrenHavePropXorChildren">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>childrenHavePropXorChildren
+        <span class="apidocSignatureSpan">(prop)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function childrenHavePropXorChildren(prop) {
+  if (typeof prop !== &#x27;string&#x27; &#x26;&#x26; (typeof prop === &#x27;undefined&#x27; ? &#x27;undefined&#x27; : _typeof(prop)) !== &#x27;symbol&#x27;) {
+    throw new TypeError(&#x27;invalid prop: must be string or symbol&#x27;);
+  }
+
+  var validator = function () {
+    function childrenHavePropXorChildrenWithProp(_ref, _, componentName) {
+      var children = _ref.children;
+
+      var childrenCount = _react2[&#x27;default&#x27;].Children.count(children);
+      var propCount = 0;
+      var grandchildrenCount = 0;
+
+      _react2[&#x27;default&#x27;].Children.forEach(children, function (child) {
+        if (child.props[prop]) {
+          propCount += 1;
+        }
+        if (_react2[&#x27;default&#x27;].Children.count(child.props.children)) {
+          grandchildrenCount += 1;
+        }
+      });
+
+      if (propCount === childrenCount &#x26;&#x26; grandchildrenCount === 0 || propCount === 0 &#x26;&#x26; grandchildrenCount === childrenCount ||
+propCount === 0 &#x26;&#x26; grandchildrenCount === 0) {
+        return null;
+      }
+
+      return new TypeError(&#x27;`&#x27; + String(componentName) + &#x27;` requires children to all have prop \u201C&#x27; + String(prop) + &#x27;\u201D,
+all have children, or all have neither.&#x27;);
+    }
+
+    return childrenHavePropXorChildrenWithProp;
+  }();
+  validator.isRequired = validator;
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, &#x27;childrenHavePropXorChildrenWithProp:&#x27; + String(prop), prop);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.childrenOf" id="apidoc.element.airbnb-prop-types.childrenOf">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>childrenOf
+        <span class="apidocSignatureSpan">(propType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function childrenOf(propType) {
+  function childrenOfPropType(props, propName, componentName) {
+    if (propName !== &#x27;children&#x27;) {
+      return new TypeError(String(componentName) + &#x27; is using the childrenOf validator on non-children prop &#x22;&#x27; + String(propName
+) + &#x27;&#x22;&#x27;);
+    }
+
+    var propValue = props[propName];
+
+    if (propValue == null) {
+      return null;
+    }
+    var children = (0, _renderableChildren2[&#x27;default&#x27;])(propValue);
+    if (children.length === 0) {
+      return null;
+    }
+
+    for (var _len2 = arguments.length, rest = Array(_len2 &#x3e; 3 ? _len2 - 3 : 0), _key2 = 3; _key2 &#x3c; _len2; _key2++) {
+      rest[_key2 - 3] = arguments[_key2];
+    }
+
+    return validateChildren.apply(undefined, [propType, children, props, componentName].concat(rest));
+  }
+
+  childrenOfPropType.isRequired = function (props, propName, componentName) {
+    for (var _len3 = arguments.length, rest = Array(_len3 &#x3e; 3 ? _len3 - 3 : 0), _key3 = 3; _key3 &#x3c; _len3; _key3++) {
+      rest[_key3 - 3] = arguments[_key3];
+    }
+
+    if (propName !== &#x27;children&#x27;) {
+      return new TypeError(String(componentName) + &#x27; is using the childrenOf validator on non-children prop &#x22;&#x27; + String(propName
+) + &#x27;&#x22;&#x27;);
+    }
+
+    var children = (0, _renderableChildren2[&#x27;default&#x27;])(props[propName]);
+    if (children.length === 0) {
+      return new TypeError(&#x27;`&#x27; + String(componentName) + &#x27;` requires at least one node of type &#x27; + String(propType.typeName || propType
+.name));
+    }
+
+    return validateChildren.apply(undefined, [propType, children, props, componentName].concat(rest));
+  };
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(childrenOfPropType, &#x27;childrenOf&#x27;, propType);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.childrenOfType" id="apidoc.element.airbnb-prop-types.childrenOfType">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>childrenOfType
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function childrenOfType() {
+  for (var _len = arguments.length, types = Array(_len), _key = 0; _key &#x3c; _len; _key++) {
+    types[_key] = arguments[_key];
+  }
+
+  if (types.length &#x3c; 1) {
+    throw new TypeError(&#x27;childrenOfType: at least 1 type is required&#x27;);
+  }
+
+  function validator(props, propName, componentName) {
+    return onlyTypes(types, (0, _renderableChildren2[&#x27;default&#x27;])(props[propName]), componentName);
+  }
+
+  validator.isRequired = function (props, propName, componentName) {
+    var children = (0, _renderableChildren2[&#x27;default&#x27;])(props[propName]);
+    return isRequired(types, children, componentName) || onlyTypes(types, children, componentName);
+  };
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, &#x27;childrenOfType&#x27;, types);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.childrenSequenceOf" id="apidoc.element.airbnb-prop-types.childrenSequenceOf">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>childrenSequenceOf
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function childrenSequenceOfValidator() {
+  for (var _len = arguments.length, specifiers = Array(_len), _key = 0; _key &#x3c; _len; _key++) {
+    specifiers[_key] = arguments[_key];
+  }
+
+  var seq = _sequenceOf2[&#x27;default&#x27;].apply(undefined, specifiers);
+
+  var validator = function () {
+    function childrenSequenceOf(props, propName, componentName) {
+      if (propName !== &#x27;children&#x27;) {
+        return new TypeError(String(componentName) + &#x27; is using the childrenSequenceOf validator on non-children prop &#x22;&#x27; + String
+(propName) + &#x27;&#x22;&#x27;);
+      }
+
+      var propValue = props[propName];
+      var children = (0, _renderableChildren2[&#x27;default&#x27;])(propValue);
+      if (children.length === 0) {
+        return null;
+      }
+
+      for (var _len2 = arguments.length, rest = Array(_len2 &#x3e; 3 ? _len2 - 3 : 0), _key2 = 3; _key2 &#x3c; _len2; _key2++) {
+        rest[_key2 - 3] = arguments[_key2];
+      }
+
+      return seq.apply(undefined, [(0, _object2[&#x27;default&#x27;])({}, props, { children: children }), propName, componentName].concat(
+rest));
+    }
+
+    return childrenSequenceOf;
+  }();
+
+  validator.isRequired = function () {
+    function childrenSequenceOfRequired(props, propName, componentName) {
+      if (propName !== &#x27;children&#x27;) {
+        return new TypeError(String(componentName) + &#x27; is using the childrenSequenceOf validator on non-children prop &#x22;&#x27; + String
+(propName) + &#x27;&#x22;&#x27;);
+      }
+
+      var propValue = props[propName];
+      var children = (0, _renderableChildren2[&#x27;default&#x27;])(propValue);
+      if (children.length === 0) {
+        return new TypeError(String(componentName) + &#x27;: renderable children are required.&#x27;);
+      }
+
+      for (var _len3 = arguments.length, rest = Array(_len3 &#x3e; 3 ? _len3 - 3 : 0), _key3 = 3; _key3 &#x3c; _len3; _key3++) {
+        rest[_key3 - 3] = arguments[_key3];
+      }
+
+      return seq.isRequired.apply(seq, [(0, _object2[&#x27;default&#x27;])({}, props, { children: children }), propName, componentName].concat
+(rest));
+    }
+
+    return childrenSequenceOfRequired;
+  }();
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, &#x27;childrenSequenceOf&#x27;, specifiers);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.componentWithName" id="apidoc.element.airbnb-prop-types.componentWithName">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>componentWithName
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function componentWithName(name) {
+  if (typeof name !== &#x27;string&#x27; &#x26;&#x26; !(0, _isRegex2[&#x27;default&#x27;])(name)) {
+    throw new TypeError(&#x27;name must be a string or a regex&#x27;);
+  }
+
+  function componentWithNameValidator(props, propName, componentName) {
+    var prop = props[propName];
+    if (props[propName] == null) {
+      return null;
+    }
+
+    for (var _len2 = arguments.length, rest = Array(_len2 &#x3e; 3 ? _len2 - 3 : 0), _key2 = 3; _key2 &#x3c; _len2; _key2++) {
+      rest[_key2 - 3] = arguments[_key2];
+    }
+
+    return hasName.apply(undefined, [name, prop, propName, componentName].concat(rest));
+  }
+
+  componentWithNameValidator.isRequired = function () {
+    function componentWithNameRequired(props, propName, componentName) {
+      var prop = props[propName];
+      if (prop == null) {
+        return new TypeError(&#x27;`&#x27; + String(componentName) + &#x27;.&#x27; + String(propName) + &#x27;` requires at least one component named &#x27; +
+String(name));
+      }
+
+      for (var _len3 = arguments.length, rest = Array(_len3 &#x3e; 3 ? _len3 - 3 : 0), _key3 = 3; _key3 &#x3c; _len3; _key3++) {
+        rest[_key3 - 3] = arguments[_key3];
+      }
+
+      return hasName.apply(undefined, [name, prop, propName, componentName].concat(rest));
+    }
+
+    return componentWithNameRequired;
+  }();
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(componentWithNameValidator, &#x27;componentWithName:&#x27; + String(name), name);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.elementType" id="apidoc.element.airbnb-prop-types.elementType">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>elementType
+        <span class="apidocSignatureSpan">(Type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function elementTypeValidator(Type) {
+  if (Type === &#x27;*&#x27;) {
+    return (0, _wrapValidator2[&#x27;default&#x27;])(_propTypes.element, &#x27;elementType(*)&#x27;, Type);
+  }
+
+  if (typeof Type !== &#x27;string&#x27; &#x26;&#x26; typeof Type !== &#x27;function&#x27;) {
+    throw new TypeError(&#x27;Type must be a React Component, an HTML element tag name, or &#x22;*&#x22;. Got an &#x27; + (typeof Type === &#x27;undefined
+&#x27; ? &#x27;undefined&#x27; : _typeof(Type)));
+  }
+
+  function elementType(props, propName, componentName) {
+    if (props[propName] == null) {
+      return null;
+    }
+
+    for (var _len = arguments.length, rest = Array(_len &#x3e; 3 ? _len - 3 : 0), _key = 3; _key &#x3c; _len; _key++) {
+      rest[_key - 3] = arguments[_key];
+    }
+
+    return validateElementType.apply(undefined, [Type, props, propName, componentName].concat(rest));
+  }
+  elementType.isRequired = elementType; // covered by and + element
+
+  var typeName = getTypeName(Type);
+  var validatorName = &#x27;elementType(&#x27; + String(typeName) + &#x27;)&#x27;;
+  return (0, _wrapValidator2[&#x27;default&#x27;])((0, _and2[&#x27;default&#x27;])([_propTypes.element, elementType], validatorName), validatorName,
+Type);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.explicitNull" id="apidoc.element.airbnb-prop-types.explicitNull">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>explicitNull
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">explicitNull = function () {
+  return (0, _wrapValidator2[&#x27;default&#x27;])(explicitNull, &#x27;explicitNull&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.forbidExtraProps" id="apidoc.element.airbnb-prop-types.forbidExtraProps">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>forbidExtraProps
+        <span class="apidocSignatureSpan">(propTypes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function forbidExtraProps(propTypes) {
+  if (!(0, _isPlainObject2[&#x27;default&#x27;])(propTypes)) {
+    throw new TypeError(&#x27;given propTypes must be an object&#x27;);
+  }
+  if ((0, _has2[&#x27;default&#x27;])(propTypes, zeroWidthSpace) &#x26;&#x26; !isBranded(propTypes[zeroWidthSpace])) {
+    throw new TypeError(&#x27;Against all odds, you created a propType for a prop named after the zero-width space - which, sadly, conflicts
+ with `forbidExtraProps`&#x27;);
+  }
+
+  return (0, _object2[&#x27;default&#x27;])({}, propTypes, _defineProperty({}, zeroWidthSpace, brand(function () {
+    function forbidUnknownProps(props, _, componentName) {
+      var unknownProps = Object.keys(props).filter(function (prop) {
+        return !(0, _has2[&#x27;default&#x27;])(propTypes, prop);
+      });
+      if (unknownProps.length &#x3e; 0) {
+        return new TypeError(String(componentName) + &#x27;: unknown props found: &#x27; + String(unknownProps.join(&#x27;, &#x27;)));
+      }
+      return null;
+    }
+
+    return forbidUnknownProps;
+  }())));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.integer" id="apidoc.element.airbnb-prop-types.integer">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>integer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">integer = function () {
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, &#x27;integer&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.keysOf" id="apidoc.element.airbnb-prop-types.keysOf">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>keysOf
+        <span class="apidocSignatureSpan">(propType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function keysOfValidator(propType) {
+  var name = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : &#x27;keysOf&#x27;;
+
+  if (typeof propType !== &#x27;function&#x27;) {
+    throw new TypeError(&#x27;argument to keysOf must be a valid PropType function&#x27;);
+  }
+
+  var validator = function () {
+    function keysOf(props, propName, componentName, location, propFullName) {
+      for (var _len = arguments.length, rest = Array(_len &#x3e; 5 ? _len - 5 : 0), _key = 5; _key &#x3c; _len; _key++) {
+        rest[_key - 5] = arguments[_key];
+      }
+
+      var propValue = props[propName];
+
+      if (propValue == null || (0, _isPrimitive2[&#x27;default&#x27;])(propValue)) {
+        return null;
+      }
+
+      var firstError = null;
+      Object.keys(propValue).some(function (key) {
+        firstError = propType.apply(undefined, [_defineProperty({}, key, key), key, componentName, location, &#x27;(&#x27; + String(propFullName
+) + &#x27;).&#x27; + String(key)].concat(rest));
+        return firstError != null;
+      });
+      return firstError || null;
+    }
+
+    return keysOf;
+  }();
+
+  validator.isRequired = function () {
+    function keyedByRequired(props, propName, componentName) {
+      var propValue = props[propName];
+
+      if (propValue == null) {
+        return new TypeError(String(componentName) + &#x27;: &#x27; + String(propName) + &#x27; is required, but value is &#x27; + String(propValue));
+      }
+
+      for (var _len2 = arguments.length, rest = Array(_len2 &#x3e; 3 ? _len2 - 3 : 0), _key2 = 3; _key2 &#x3c; _len2; _key2++) {
+        rest[_key2 - 3] = arguments[_key2];
+      }
+
+      return validator.apply(undefined, [props, propName, componentName].concat(rest));
+    }
+
+    return keyedByRequired;
+  }();
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, name, propType);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.mutuallyExclusiveProps" id="apidoc.element.airbnb-prop-types.mutuallyExclusiveProps">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>mutuallyExclusiveProps
+        <span class="apidocSignatureSpan">(propType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mutuallyExclusiveOfType(propType) {
+  if (typeof propType !== &#x27;function&#x27;) {
+    throw new TypeError(&#x27;a propType is required&#x27;);
+  }
+
+  for (var _len = arguments.length, exclusiveProps = Array(_len &#x3e; 1 ? _len - 1 : 0), _key = 1; _key &#x3c; _len; _key++) {
+    exclusiveProps[_key - 1] = arguments[_key];
+  }
+
+  if (exclusiveProps.length &#x3c; 1) {
+    throw new TypeError(&#x27;at least one prop that is mutually exclusive with this propType is required&#x27;);
+  }
+
+  var propList = exclusiveProps.join(&#x27;, or &#x27;);
+
+  var map = exclusiveProps.reduce(function (acc, prop) {
+    return (0, _object2[&#x27;default&#x27;])({}, acc, _defineProperty({}, prop, true));
+  }, {});
+  var countProps = function countProps(count, prop) {
+    return count + (map[prop] ? 1 : 0);
+  };
+
+  var validator = function () {
+    function mutuallyExclusiveProps(props, propName, componentName) {
+      var exclusivePropCount = Object.keys(props).filter(function (prop) {
+        return props[prop] != null;
+      }).reduce(countProps, 0);
+      if (exclusivePropCount &#x3e; 1) {
+        return new Error(&#x27;A &#x27; + String(componentName) + &#x27; cannot have more than one of these props: &#x27; + String(propList));
+      }
+
+      for (var _len2 = arguments.length, rest = Array(_len2 &#x3e; 3 ? _len2 - 3 : 0), _key2 = 3; _key2 &#x3c; _len2; _key2++) {
+        rest[_key2 - 3] = arguments[_key2];
+      }
+
+      return propType.apply(undefined, [props, propName, componentName].concat(rest));
+    }
+
+    return mutuallyExclusiveProps;
+  }();
+
+  validator.isRequired = function () {
+    function mutuallyExclusivePropsRequired(props, propName, componentName) {
+      var exclusivePropCount = Object.keys(props).filter(function (prop) {
+        return prop === propName || props[prop] != null;
+      }).reduce(countProps, 0);
+      if (exclusivePropCount &#x3e; 1) {
+        return new Error(&#x27;A &#x27; + String(componentName) + &#x27; cannot have more than one of these props: &#x27; + String(propList));
+      }
+
+      for (var _len3 = arguments.length, rest = Array(_len3 &#x3e; 3 ? _len3 - 3 : 0), _key3 = 3; _key3 &#x3c; _len3; _key3++) {
+        rest[_key3 - 3] = arguments[_key3];
+      }
+
+      return propType.apply(undefined, [props, propName, componentName].concat(rest));
+    }
+
+    return mutuallyExclusivePropsRequired;
+  }();
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, &#x27;mutuallyExclusiveProps:&#x27; + String(propList), exclusiveProps);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.mutuallyExclusiveTrueProps" id="apidoc.element.airbnb-prop-types.mutuallyExclusiveTrueProps">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>mutuallyExclusiveTrueProps
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mutuallyExclusiveTrue() {
+  for (var _len = arguments.length, exclusiveProps = Array(_len), _key = 0; _key &#x3c; _len; _key++) {
+    exclusiveProps[_key] = arguments[_key];
+  }
+
+  if (exclusiveProps.length &#x3c; 1) {
+    throw new TypeError(&#x27;at least one prop that is mutually exclusive is required&#x27;);
+  }
+  if (!exclusiveProps.every(function (x) {
+    return typeof x === &#x27;string&#x27;;
+  })) {
+    throw new TypeError(&#x27;all exclusive true props must be strings&#x27;);
+  }
+
+  var propsList = exclusiveProps.join(&#x27;, or &#x27;);
+
+  var validator = function () {
+    function mutuallyExclusiveTrueProps(props, propName, componentName) {
+      var countProps = function () {
+        function countProps(count, prop) {
+          return count + (props[prop] ? 1 : 0);
+        }
+
+        return countProps;
+      }();
+
+      var exclusivePropCount = exclusiveProps.reduce(countProps, 0);
+      if (exclusivePropCount &#x3e; 1) {
+        return new Error(&#x27;A &#x27; + String(componentName) + &#x27; cannot have more than one of these boolean props be true: &#x27; + String(propsList
+));
+      }
+
+      for (var _len2 = arguments.length, rest = Array(_len2 &#x3e; 3 ? _len2 - 3 : 0), _key2 = 3; _key2 &#x3c; _len2; _key2++) {
+        rest[_key2 - 3] = arguments[_key2];
+      }
+
+      return _propTypes.bool.apply(undefined, [props, propName, componentName].concat(rest));
+    }
+
+    return mutuallyExclusiveTrueProps;
+  }();
+
+  validator.isRequired = function () {
+    function mutuallyExclusiveTruePropsRequired(props, propName, componentName) {
+      var countProps = function () {
+        function countProps(count, prop) {
+          return count + (props[prop] ? 1 : 0);
+        }
+
+        return countProps;
+      }();
+
+      var exclusivePropCount = exclusiveProps.reduce(countProps, 0);
+      if (exclusivePropCount &#x3e; 1) {
+        return new Error(&#x27;A &#x27; + String(componentName) + &#x27; cannot have more than one of these boolean props be true: &#x27; + String(propsList
+));
+      }
+
+      for (var _len3 = arguments.length, rest = Array(_len3 &#x3e; 3 ? _len3 - 3 : 0), _key3 = 3; _key3 &#x3c; _len3; _key3++) {
+        rest[_key3 - 3] = arguments[_key3];
+      }
+
+      return _propTypes.bool.isRequired.apply(_propTypes.bool, [props, propName, componentName].concat(rest));
+    }
+
+    return mutuallyExclusiveTruePropsRequired;
+  }();
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, &#x27;mutuallyExclusiveTrueProps: &#x27; + String(propsList), exclusiveProps);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.nChildren" id="apidoc.element.airbnb-prop-types.nChildren">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>nChildren
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function nChildren(n) {
+  var propType = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : _propTypes.node;
+
+  if (typeof n !== &#x27;number&#x27; || isNaN(n) || n &#x3c; 0) {
+    throw new TypeError(&#x27;a non-negative number is required&#x27;);
+  }
+
+  var validator = function () {
+    function nChildrenValidator(props, propName, componentName) {
+      if (propName !== &#x27;children&#x27;) {
+        return new TypeError(String(componentName) + &#x27; is using the nChildren validator on a non-children prop&#x27;);
+      }
+
+      var children = props.children;
+
+      var childrenCount = _react2[&#x27;default&#x27;].Children.count(children);
+
+      if (childrenCount !== n) {
+        return new RangeError(String(componentName) + &#x27; expects to receive &#x27; + String(n) + &#x27; children, but received &#x27; + String(childrenCount
+) + &#x27; children.&#x27;);
+      }
+
+      for (var _len = arguments.length, rest = Array(_len &#x3e; 3 ? _len - 3 : 0), _key = 3; _key &#x3c; _len; _key++) {
+        rest[_key - 3] = arguments[_key];
+      }
+
+      return propType.apply(undefined, [props, propName, componentName].concat(rest));
+    }
+
+    return nChildrenValidator;
+  }();
+  validator.isRequired = validator;
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, &#x27;nChildren:&#x27; + String(n), n);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.nonNegativeInteger" id="apidoc.element.airbnb-prop-types.nonNegativeInteger">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>nonNegativeInteger
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nonNegativeInteger = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.nonNegativeNumber" id="apidoc.element.airbnb-prop-types.nonNegativeNumber">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>nonNegativeNumber
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nonNegativeNumber = function () {
+  return (0, _wrapValidator2[&#x27;default&#x27;])(nonNegativeNumber, &#x27;nonNegativeNumber&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.numericString" id="apidoc.element.airbnb-prop-types.numericString">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>numericString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">numericString = function () {
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, &#x27;numericString&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.object" id="apidoc.element.airbnb-prop-types.object">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>object
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">object = function () {
+  return (0, _wrapValidator2[&#x27;default&#x27;])(object, &#x27;object&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.or" id="apidoc.element.airbnb-prop-types.or">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>or
+        <span class="apidocSignatureSpan">(validators)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function or(validators) {
+  var name = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : &#x27;or&#x27;;
+
+  if (!Array.isArray(validators)) {
+    throw new TypeError(&#x27;or: 2 or more validators are required&#x27;);
+  }
+  if (validators.length &#x3c;= 1) {
+    throw new RangeError(&#x27;or: 2 or more validators are required&#x27;);
+  }
+
+  var validator = oneOfTypeValidator([(0, _propTypes.arrayOf)(oneOfTypeValidator(validators))].concat(_toConsumableArray(validators
+)));
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, name, validators);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.range" id="apidoc.element.airbnb-prop-types.range">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>range
+        <span class="apidocSignatureSpan">(min, max)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function range(min, max) {
+  if (!isValidLength(min) || !isValidLength(max)) {
+    throw new RangeError(&#x27;&#x22;range&#x22; requires two integers: &#x27; + String(min) + &#x27; and &#x27; + String(max) + &#x27; given&#x27;);
+  }
+  if (min === max) {
+    throw new RangeError(&#x27;min and max must not be the same&#x27;);
+  }
+  return (0, _wrapValidator2[&#x27;default&#x27;])((0, _and2[&#x27;default&#x27;])([(0, _integer2[&#x27;default&#x27;])(), (0, _between2[&#x27;default&#x27;])({ gte: min
+, lt: max })], &#x27;range&#x27;), &#x27;range&#x27;, { min: min, max: max });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.restrictedProp" id="apidoc.element.airbnb-prop-types.restrictedProp">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>restrictedProp
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">restrictedProp = function () {
+  return (0, _wrapValidator2[&#x27;default&#x27;])(restrictedProp, &#x27;restrictedProp&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.sequenceOf" id="apidoc.element.airbnb-prop-types.sequenceOf">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>sequenceOf
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sequenceOfValidator() {
+  for (var _len2 = arguments.length, specifiers = Array(_len2), _key2 = 0; _key2 &#x3c; _len2; _key2++) {
+    specifiers[_key2] = arguments[_key2];
+  }
+
+  if (specifiers.length === 0) {
+    throw new RangeError(&#x27;sequenceOf: at least one specifier is required&#x27;);
+  }
+
+  var errors = specifiers.map(function (specifier, i) {
+    return specifierValidator({ specifier: specifier }, &#x27;specifier&#x27;, &#x27;sequenceOf specifier&#x27;, &#x27;suequenceOf specifier, index &#x27; + String
+(i), &#x27;specifier, index &#x27; + String(i));
+  });
+  if (errors.some(Boolean)) {
+    throw new TypeError(&#x27;\n      sequenceOf: all specifiers must match the appropriate shape.\n\n      Errors:\n        &#x27; + String
+(errors.map(function (e, i) {
+      return &#x27; - Argument index &#x27; + String(i) + &#x27;: &#x27; + String(e.message);
+    }).join(&#x27;,\n        &#x27;)) + &#x27;\n    &#x27;);
+  }
+
+  var validator = function () {
+    function sequenceOf(props, propName) {
+      var propValue = props[propName];
+
+      if (propValue == null) {
+        return null;
+      }
+
+      for (var _len3 = arguments.length, rest = Array(_len3 &#x3e; 2 ? _len3 - 2 : 0), _key3 = 2; _key3 &#x3c; _len3; _key3++) {
+        rest[_key3 - 2] = arguments[_key3];
+      }
+
+      var error = _propTypes.array.apply(undefined, [props, propName].concat(rest));
+      if (error) {
+        return error;
+      }
+
+      return validateChunks.apply(undefined, [specifiers, props, propName].concat(rest));
+    }
+
+    return sequenceOf;
+  }();
+
+  validator.isRequired = function () {
+    function sequenceOfRequired(props, propName, componentName) {
+      for (var _len4 = arguments.length, rest = Array(_len4 &#x3e; 3 ? _len4 - 3 : 0), _key4 = 3; _key4 &#x3c; _len4; _key4++) {
+        rest[_key4 - 3] = arguments[_key4];
+      }
+
+      var error = _propTypes.array.isRequired.apply(_propTypes.array, [props, propName, componentName].concat(rest));
+      if (error) {
+        return error;
+      }
+
+      return validateChunks.apply(undefined, [specifiers, props, propName, componentName].concat(rest));
+    }
+
+    return sequenceOfRequired;
+  }();
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, &#x27;sequenceOf&#x27;, specifiers);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.shape" id="apidoc.element.airbnb-prop-types.shape">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>shape
+        <span class="apidocSignatureSpan">(shapeTypes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function shapeValidator(shapeTypes) {
+  if (!(0, _isPlainObject2[&#x27;default&#x27;])(shapeTypes)) {
+    throw new TypeError(&#x27;shape must be a normal object&#x27;);
+  }
+
+  function shape(props, propName, componentName, location) {
+    var propValue = props[propName];
+    if (propValue == null) {
+      return null;
+    }
+    // code adapted from PropTypes.shape: https://github.com/facebook/react/blob/14156e56b9cf18ac86963185c5af4abddf3ff811/src/isomorphic
+/classic/types/ReactPropTypes.js#L381
+    // eslint-disable-next-line guard-for-in, no-restricted-syntax
+
+    for (var _len = arguments.length, rest = Array(_len &#x3e; 4 ? _len - 4 : 0), _key = 4; _key &#x3c; _len; _key++) {
+      rest[_key - 4] = arguments[_key];
+    }
+
+    for (var key in shapeTypes) {
+      var checker = shapeTypes[key];
+      if (checker) {
+        var error = checker.apply(undefined, [propValue, key, componentName, location].concat(rest));
+        if (error) {
+          return error;
+        }
+      }
+    }
+    return null;
+  }
+
+  shape.isRequired = function () {
+    function shapeRequired(props, propName, componentName) {
+      var propValue = props[propName];
+      if (propValue == null) {
+        return new TypeError(String(componentName) + &#x27;: &#x27; + String(propName) + &#x27; is required.&#x27;);
+      }
+
+      for (var _len2 = arguments.length, rest = Array(_len2 &#x3e; 3 ? _len2 - 3 : 0), _key2 = 3; _key2 &#x3c; _len2; _key2++) {
+        rest[_key2 - 3] = arguments[_key2];
+      }
+
+      return shape.apply(undefined, [props, propName, componentName].concat(rest));
+    }
+
+    return shapeRequired;
+  }();
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(shape, &#x27;shape&#x27;, shapeTypes);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.uniqueArray" id="apidoc.element.airbnb-prop-types.uniqueArray">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>uniqueArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uniqueArray = function () {
+  return (0, _wrapValidator2[&#x27;default&#x27;])(uniqueArray, &#x27;uniqueArray&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.uniqueArrayOf" id="apidoc.element.airbnb-prop-types.uniqueArrayOf">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>uniqueArrayOf
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function uniqueArrayOfTypeValidator(type) {
+  var name = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : &#x27;uniqueArrayOfType&#x27;;
+
+  if (typeof type !== &#x27;function&#x27;) {
+    throw new TypeError(&#x27;type must be a validator function&#x27;);
+  }
+
+  var arrayValidator = (0, _propTypes.arrayOf)(type);
+
+  var validator = (0, _and2[&#x27;default&#x27;])([arrayValidator, unique], name);
+  validator.isRequired = (0, _and2[&#x27;default&#x27;])([arrayValidator.isRequired, unique.isRequired], String(name) + &#x27;.isRequired&#x27;);
+
+  return validator;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.valuesOf" id="apidoc.element.airbnb-prop-types.valuesOf">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>valuesOf
+        <span class="apidocSignatureSpan">(propType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function valuesOfValidator(propType) {
+  if (typeof propType !== &#x27;function&#x27;) {
+    throw new TypeError(&#x27;objectOf: propType must be a function&#x27;);
+  }
+
+  var validator = function () {
+    function valuesOf(props, propName, componentName, location, propFullName) {
+      for (var _len = arguments.length, rest = Array(_len &#x3e; 5 ? _len - 5 : 0), _key = 5; _key &#x3c; _len; _key++) {
+        rest[_key - 5] = arguments[_key];
+      }
+
+      var propValue = props[propName];
+      if (propValue == null || (0, _isPrimitive2[&#x27;default&#x27;])(propValue)) {
+        return null;
+      }
+
+      var firstError = void 0;
+      Object.keys(propValue).some(function (key) {
+        firstError = propType.apply(undefined, [propValue, key, componentName, location, String(propFullName) + &#x27;.&#x27; + String(key
+)].concat(rest));
+        return firstError;
+      });
+      return firstError || null;
+    }
+
+    return valuesOf;
+  }();
+  validator.isRequired = function () {
+    function valuesOfRequired(props, propName, componentName) {
+      var propValue = props[propName];
+      if (propValue == null) {
+        return new TypeError(String(componentName) + &#x27;: &#x27; + String(propName) + &#x27; is required.&#x27;);
+      }
+
+      for (var _len2 = arguments.length, rest = Array(_len2 &#x3e; 3 ? _len2 - 3 : 0), _key2 = 3; _key2 &#x3c; _len2; _key2++) {
+        rest[_key2 - 3] = arguments[_key2];
+      }
+
+      return validator.apply(undefined, [props, propName, componentName].concat(rest));
+    }
+
+    return valuesOfRequired;
+  }();
+
+  return (0, _wrapValidator2[&#x27;default&#x27;])(validator, &#x27;valuesOf&#x27;, propType);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.withShape" id="apidoc.element.airbnb-prop-types.withShape">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>withShape
+        <span class="apidocSignatureSpan">(type, shapeTypes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function withShape(type, shapeTypes) {
+  if (typeof type !== &#x27;function&#x27;) {
+    throw new TypeError(&#x27;type must be a valid PropType&#x27;);
+  }
+  var shapeValidator = (0, _shape2[&#x27;default&#x27;])(shapeTypes);
+  return (0, _and2[&#x27;default&#x27;])([type, shapeValidator], &#x27;withShape&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.airbnb-prop-types.nonNegativeInteger" id="apidoc.module.airbnb-prop-types.nonNegativeInteger">module airbnb-prop-types.nonNegativeInteger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.nonNegativeInteger.nonNegativeInteger" id="apidoc.element.airbnb-prop-types.nonNegativeInteger.nonNegativeInteger">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.</span>nonNegativeInteger
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nonNegativeInteger = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.nonNegativeInteger.isRequired" id="apidoc.element.airbnb-prop-types.nonNegativeInteger.isRequired">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.nonNegativeInteger.</span>isRequired
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isRequired = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.airbnb-prop-types.nonNegativeInteger.typeChecker" id="apidoc.module.airbnb-prop-types.nonNegativeInteger.typeChecker">module airbnb-prop-types.nonNegativeInteger.typeChecker</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.nonNegativeInteger.typeChecker.0" id="apidoc.element.airbnb-prop-types.nonNegativeInteger.typeChecker.0">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.nonNegativeInteger.typeChecker.</span>0
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">0 = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.airbnb-prop-types.nonNegativeInteger.typeChecker.1" id="apidoc.element.airbnb-prop-types.nonNegativeInteger.typeChecker.1">
+        function <span class="apidocSignatureSpan">airbnb-prop-types.nonNegativeInteger.typeChecker.</span>1
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">1 = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
